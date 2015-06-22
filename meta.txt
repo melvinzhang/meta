@@ -26,8 +26,7 @@ exp1 = {'do {'} exp2
        *( '|' {'if (test_flag) { break; }'} exp2 )
        {'} while (0);'};
 
-stat = .id {'void meta_' $ '(void)'}
-       {'{'}
+stat = .id {'void meta_' $ '(void) {'}
        '=' exp1 ';'
        {'}'};
 

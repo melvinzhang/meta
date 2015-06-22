@@ -1,6 +1,5 @@
 #include "support.h"
-void meta_arg(void)
-{
+void meta_arg(void) {
 do {
 read_literal("$");
 if (test_flag) {
@@ -17,8 +16,7 @@ emit_nl();
 }
 } while (0);
 }
-void meta_output(void)
-{
+void meta_output(void) {
 do {
 read_literal("{");
 if (test_flag) {
@@ -34,8 +32,7 @@ emit_nl();
 }
 } while (0);
 }
-void meta_exp3(void)
-{
+void meta_exp3(void) {
 do {
 read_id();
 if (test_flag) {
@@ -98,8 +95,7 @@ emit_nl();
 }
 } while (0);
 }
-void meta_exp2(void)
-{
+void meta_exp2(void) {
 do {
 do {
 meta_exp3();
@@ -135,8 +131,7 @@ emit_nl();
 }
 } while (0);
 }
-void meta_exp1(void)
-{
+void meta_exp1(void) {
 do {
 emit("do {");
 emit_nl();
@@ -161,16 +156,13 @@ emit_nl();
 }
 } while (0);
 }
-void meta_stat(void)
-{
+void meta_stat(void) {
 do {
 read_id();
 if (test_flag) {
 emit("void meta_");
 emit_token();
-emit("(void)");
-emit_nl();
-emit("{");
+emit("(void) {");
 emit_nl();
 read_literal("=");
 error_if_false();
@@ -183,8 +175,7 @@ emit_nl();
 }
 } while (0);
 }
-void meta_program(void)
-{
+void meta_program(void) {
 do {
 read_literal(".syntax");
 if (test_flag) {
