@@ -234,7 +234,7 @@ int main(int argc, char *argv[])
 	// run meta
 	meta_program();
 
-	fprintf(stderr, "%d %d\n", pos, strlen(source));
+	fprintf(stderr, "%d %zu\n", pos, strlen(source));
 
 	fclose(output);
 	free(source);
